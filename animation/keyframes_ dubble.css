@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dubble {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin-left: 30px;
+}
+
+.dubble span {
+  border: 1px solid #535151;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  transition: 0.5s;
+}
+
+.dubble span:nth-child(1) {
+  animation: dubble 6s linear infinite;
+}
+
+.dubble span:nth-child(2) {
+  animation: dubble 4 s linear infinite;
+  animation-direction: reverse;
+}
+
+.dubble span:nth-child(3) {
+  animation: dubble 10s linear infinite;
+}
+
+.dubble:hover span {
+  background-color: turquoise;
+  border: none;
+}
+
+.dubble:nth-child(1):hover span {
+  background-color: turquoise;
+  border: none;
+}
+
+.dubble:nth-child(2):hover span {
+  background-color: rgb(224, 157, 64);
+  border: none;
+}
+
+.dubble:nth-child(3):hover span {
+  background-color: rgb(136, 224, 64);
+  border: none;
+}
+
+.dubble:hover span:nth-child(1) {
+  opacity: 30%
+}
+
+.dubble:hover span:nth-child(2) {
+  opacity: 10%
+}
+
+.dubble:hover span:nth-child(3) {
+  opacity: 40%
+}
+
+@keyframes dubble {
+  to {
+    transform: rotate(0)
+  }
+
+  from {
+    transform: rotate(360deg)
+  }
+}
+ 
+.dubble div {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  text-align: center;
+}
+
+.dubble div a {
+  color:#000;
+  border: 1px solid #535151;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+  padding: 5px;
+  margin-top: 5px;
+  display: inline-block;
+}
